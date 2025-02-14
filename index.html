@@ -7,6 +7,13 @@
     <link rel="icon" href="assets/lily.png" type="image/png">
 
     <style>
+        @font-face {
+            font-family: "CustomFont";
+            src: url("assets/industrial.TTF") format("truetype");
+            font-weight: normal;
+            font-style: normal;
+        }
+
         body {
             background-color: white;
             color: black;
@@ -17,24 +24,38 @@
 
         h1 {
             text-align: left;
+            font-family: "CustomFont", sans-serif;
+            font-weight: normal;
+            margin-bottom: 2px;
         }
+
         .button-container {
             margin-top: 20px;
             display: flex;
             align-items: center;
             gap: 30px;
         }
+
         .social-button {
             display: flex;
             flex-direction: column;
             align-items: center;
             text-decoration: none;
             color: black;
-            font-size: 14px;
+            font-size: 18px;
+            font-family: "CustomFont", sans-serif;
         }
+
         .social-button img {
             width: 175px;
             height: 175px;
+        }
+
+        .social-button:hover span {
+            text-decoration: underline;
+        }
+        ul, p {
+            margin-top: 0;
         }
     </style>
 </head>
@@ -42,15 +63,15 @@
 
 <p>interested in circuit design, firmware, and signals processing.</p>
 
-<h1>About Me</h1>
+<h1>about me</h1>
 <ul>
     <li>Electrical Engineering, University of Waterloo (2024 - 2029)</li>
     <li>DSP and Software Intern, Ethernovia (Jan 2025 - Apr 2025)</li>
 </ul>
 
-<h1>Current Projects</h1>
+<h1>current projects</h1>
 <p>I'm currently learning Verilog (I'm working on building a CPU!) and fundamentals of PCB design. </p>
-<p>Recent/notable projects on my github:</p>
+<p>Recent/notable projects on my GitHub:</p>
 <ul>
     <li> Sometimes I try out Project Euler problems, solutions can be found under project_euler.</li>
     <li> You can find my first-year design project, ParkPal, under ECE198.</li>
@@ -61,7 +82,8 @@
     <li>Computer Organization and Design (Patterson, Hennessy)</li>
     <li>Modern Digital and Analog Communication Systems (Lathi, Ding)</li>
 </ul>
-<h1>Other Pages</h1>
+
+<h1>other pages</h1>
 <div class="button-container">
     <a href="https://github.com/mariamathai29" target="_blank" class="social-button">
         <img src="assets/button1.png" alt="github">
