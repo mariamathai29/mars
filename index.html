@@ -19,6 +19,7 @@
             font-weight: normal;
             font-style: normal;
         }
+
         @font-face {
             font-family: "Sono-Bold";
             src: url("assets/Sono-Bold.ttf") format("truetype");
@@ -45,6 +46,7 @@
             background-color: rgba(255, 255, 255, 0.2); /* Semi-translucent */
             position: relative;
             backdrop-filter: blur(10px); /* Adds a slight blur to the background */
+            transition: transform 0.1s ease-in-out;
         }
 
         h1 {
@@ -137,10 +139,17 @@
         // Parallax effect for headers
         window.addEventListener('scroll', function() {
             const headers = document.querySelectorAll('h1');
+            const sections = document.querySelectorAll('.section');
+            let offset = window.pageYOffset;
+
+            // Apply parallax effect to headers (normal)
             headers.forEach(header => {
-                let offset = window.pageYOffset;
-                // Apply parallax effect by changing header's transform property
                 header.style.transform = `translateX(-50%) translateY(${offset * 0.2}px)`;
+            });
+
+            // Apply slower movement to sections
+            sections.forEach(section => {
+                section.style.transform = `translateY(${offset * 0.05}px)`; // Move slower
             });
         });
     </script>
