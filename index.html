@@ -165,7 +165,7 @@
         document.addEventListener("scroll", function () {
             const headers = document.querySelectorAll("h1");
             headers.forEach(header => {
-                let scrollOffset = window.scrollY * 0.05; // Adjust speed of parallax effect
+                let scrollOffset = window.scrollY * 0.08; // Adjust speed of parallax effect
                 header.style.transform = `translateX(-50%) translateY(${scrollOffset}px)`;
             });
         });
