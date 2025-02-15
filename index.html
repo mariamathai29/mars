@@ -68,10 +68,10 @@
         }
 
         .button-container {
-            margin-top: 20px;
+            margin-top: 30px;
             display: flex;
             justify-content: center;
-            gap: 30px;
+            gap: 50px;
         }
 
         .social-button {
@@ -145,7 +145,7 @@
 
         window.addEventListener('scroll', () => {
             document.querySelectorAll('h1').forEach(header => {
-                let speed = -window.scrollY * 0.02;
+                let speed = -window.scrollY * 0.03;
                 header.style.transform = `translate(0, ${speed}px)`;
             });
         });
