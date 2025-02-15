@@ -34,34 +34,69 @@
             font-size: 16px;
             margin: 0;
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            justify-content: flex-start;
         }
 
         /* Sidebar Styling */
         .sidebar {
             position: fixed;
-            top: 20%;
+            top: 0;
             left: 0;
             background-color: rgba(0, 0, 0, 0.8);
-            padding: 10px;
-            width: 200px;
+            padding: 20px;
+            width: 250px;
+            height: 100vh;
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 40px;
             z-index: 10;
         }
 
+        .sidebar .name-title {
+            font-size: 36px;
+            font-family: "Sono-Bold", sans-serif;
+            font-weight: bold;
+            color: white;
+        }
+
+        .sidebar .social-button {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            font-family: "Sono-Bold", sans-serif;
+            font-weight: bold;
+        }
+
+        .sidebar .social-button img {
+            width: 175px;
+            height: 175px;
+        }
+
+        .sidebar .social-button span {
+            font-family: "Sono-Bold", sans-serif;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+
         /* General Section Styling */
-        .section {
-            width: 40%;
+        .content {
+            margin-left: 270px;
             padding: 20px;
-            margin: 400px 0;
+            width: 80%;
+        }
+
+        .section {
+            width: 100%;
+            padding: 20px;
             text-align: center;
             background-color: rgba(0, 0, 0, 0.7);
             position: relative;
             backdrop-filter: blur(10px);
             transition: opacity 1s ease-in-out;
+            margin-bottom: 40px;
         }
 
         h1 {
@@ -88,56 +123,12 @@
             opacity: 0;
         }
 
-        /* Button Container Styling */
-        .button-container {
-            margin-top: 30px;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 20px;
-            position: absolute;
-            left: 5%;
-            top: 20%;
-        }
-
-        .social-button {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            text-decoration: none;
-            color: white;
-            font-size: 18px;
-            font-family: "Sono-Bold", sans-serif;
-            font-weight: bold;
-        }
-
-        .social-button img {
-            width: 175px;
-            height: 175px;
-        }
-
-        .social-button span {
-            font-family: "Sono-Bold", sans-serif;
-            font-weight: bold;
-            margin-top: 5px;
-        }
-
-        .name-title {
-            position: absolute;
-            left: 5%;
-            top: 10%;
-            font-size: 36px;
-            font-family: "Sono-Bold", sans-serif;
-            font-weight: bold;
-            color: white;
-        }
     </style>
 </head>
 <body>
-    <div class="name-title">MARIA MATHAI</div>
-
     <!-- Sidebar -->
     <div class="sidebar">
+        <div class="name-title">MARIA MATHAI</div>
         <a href="https://github.com/mariamathai29" target="_blank" class="social-button">
             <img src="assets/button1.png" alt="github">
             <span>github</span>
@@ -148,36 +139,28 @@
         </a>
     </div>
 
-    <div class="button-container">
-        <a href="https://github.com/mariamathai29" target="_blank" class="social-button">
-            <img src="assets/button1.png" alt="github">
-            <span>github</span>
-        </a>
-        <a href="https://www.linkedin.com/in/memathai/" target="_blank" class="social-button">
-            <img src="assets/button2.png" alt="linkedin">
-            <span>linkedin</span>
-        </a>
-    </div>
-
-    <div class="section">
-        <p>interested in circuit design, firmware, and signals processing.</p>
-    </div>
-    
-    <div class="section">
-        <h1>about me</h1>
-        <ul>
-            <li>Electrical Engineering, University of Waterloo (2024 - 2029)</li>
-            <li>DSP and Software Intern, Ethernovia (Jan 2025 - Apr 2025)</li>
-        </ul>
-    </div>
-    
-    <div class="section">
-        <h1>projects</h1>
-        <p>I'm currently learning Verilog (I'm working on building a CPU!) and fundamentals of PCB design.</p>
-    </div>
-    
-    <div class="section">
-        <h1>other pages</h1>
+    <!-- Main Content -->
+    <div class="content">
+        <div class="section">
+            <p>interested in circuit design, firmware, and signals processing.</p>
+        </div>
+        
+        <div class="section">
+            <h1>about me</h1>
+            <ul>
+                <li>Electrical Engineering, University of Waterloo (2024 - 2029)</li>
+                <li>DSP and Software Intern, Ethernovia (Jan 2025 - Apr 2025)</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h1>projects</h1>
+            <p>I'm currently learning Verilog (I'm working on building a CPU!) and fundamentals of PCB design.</p>
+        </div>
+        
+        <div class="section">
+            <h1>other pages</h1>
+        </div>
     </div>
 
     <script>
