@@ -9,22 +9,15 @@
         @font-face {
             font-family: "CustomFont";
             src: url("assets/ellis.ttf") format("truetype");
-            font-weight: normal;
-            font-style: normal;
         }
-
         @font-face {
             font-family: "Sono";
             src: url("assets/Sono-Regular.ttf") format("truetype");
-            font-weight: normal;
-            font-style: normal;
         }
-
         @font-face {
             font-family: "Sono-Bold";
             src: url("assets/Sono-Bold.ttf") format("truetype");
             font-weight: bold;
-            font-style: normal;
         }
 
         body {
@@ -34,18 +27,60 @@
             font-size: 16px;
             margin: 0;
             display: flex;
+        }
+
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 250px;
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .name-title {
+            font-size: 36px;
+            font-family: "Sono-Bold", sans-serif;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 50px;
+        }
+
+        .social-button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            font-family: "Sono-Bold", sans-serif;
+            margin-bottom: 20px;
+        }
+
+        .social-button img {
+            width: 150px;
+            height: 150px;
+        }
+
+        .content {
+            margin-left: 270px;
+            width: 60%;
+            display: flex;
             flex-direction: column;
             align-items: center;
         }
 
         .section {
-            width: 40%;
+            width: 100%;
             padding: 20px;
-            margin: 400px 0;
+            margin: 150px 0;
             text-align: center;
-            background-color: rgba(0, 0, 0, 0.7);
+            background-color: rgba(0, 0, 0, 0.8);
             position: relative;
-            backdrop-filter: blur(10px);
             transition: opacity 1s ease-in-out;
         }
 
@@ -53,74 +88,16 @@
             font-family: "CustomFont", sans-serif;
             font-weight: normal;
             margin-bottom: 10px;
-            position: absolute;
-            top: -75px;
-            left: 5%;
-            transform: translateX(0);
-            font-size: 130px;
-            opacity: 1;
-            transition: transform 0.2s ease-out;
-            z-index: -1;
-            color: transparent;
-            text-shadow: 0 0 5px rgba(255, 255, 255, 1);
-        }
-
-        .visible {
-            opacity: 1;
-        }
-
-        .fade-out {
-            opacity: 0;
-        }
-
-        .button-container {
-            margin-top: 30px;
-            display: flex;
-            flex-direction: column; /* Stack buttons vertically */
-            align-items: flex-start; /* Align buttons to the left */
-            gap: 20px; /* Reduce space between buttons */
-            position: absolute;
-            left: 5%;
-            top: 20%;
-        }
-
-        .social-button {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start; /* Align text to the left */
-            text-decoration: none;
+            font-size: 50px;
             color: white;
-            font-size: 18px;
-            font-family: "Sono-Bold", sans-serif;
-            font-weight: bold; /* Make text bold */
-        }
-
-        .social-button img {
-            width: 175px;
-            height: 175px;
-        }
-
-        .social-button span {
-            font-family: "Sono-Bold", sans-serif;
-            font-weight: bold; /* Bold labels */
-            margin-top: 5px;
-        }
-
-        .name-title {
-            position: absolute;
-            left: 5%;
-            top: 10%;
-            font-size: 36px;
-            font-family: "Sono-Bold", sans-serif;
-            font-weight: bold;
-            color: white;
+            position: relative;
+            top: -20px;
         }
     </style>
 </head>
 <body>
-    <div class="name-title">MARIA MATHAI</div>
-
-    <div class="button-container">
+    <div class="sidebar">
+        <div class="name-title">MARIA MATHAI</div>
         <a href="https://github.com/mariamathai29" target="_blank" class="social-button">
             <img src="assets/button1.png" alt="github">
             <span>github</span>
@@ -131,50 +108,23 @@
         </a>
     </div>
 
-    <div class="section">
-        <p>interested in circuit design, firmware, and signals processing.</p>
+    <div class="content">
+        <div class="section">
+            <p>interested in circuit design, firmware, and signals processing.</p>
+        </div>
+        
+        <div class="section">
+            <h1>about me</h1>
+            <ul>
+                <li>Electrical Engineering, University of Waterloo (2024 - 2029)</li>
+                <li>DSP and Software Intern, Ethernovia (Jan 2025 - Apr 2025)</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h1>projects</h1>
+            <p>I'm currently learning Verilog (I'm working on building a CPU!) and fundamentals of PCB design.</p>
+        </div>
     </div>
-    
-    <div class="section">
-        <h1>about me</h1>
-        <ul>
-            <li>Electrical Engineering, University of Waterloo (2024 - 2029)</li>
-            <li>DSP and Software Intern, Ethernovia (Jan 2025 - Apr 2025)</li>
-        </ul>
-    </div>
-    
-    <div class="section">
-        <h1>projects</h1>
-        <p>I'm currently learning Verilog (I'm working on building a CPU!) and fundamentals of PCB design.</p>
-    </div>
-    
-    <div class="section">
-        <h1>other pages</h1>
-    </div>
-
-    <script>
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    entry.target.classList.remove('fade-out');
-                } else {
-                    entry.target.classList.add('fade-out');
-                    entry.target.classList.remove('visible');
-                }
-            });
-        }, { threshold: 0.5 });
-
-        document.querySelectorAll('.section').forEach(section => {
-            observer.observe(section);
-        });
-
-        window.addEventListener('scroll', () => {
-            document.querySelectorAll('h1').forEach(header => {
-                let speed = -window.scrollY * 0.03;
-                header.style.transform = `translate(0, ${speed}px)`;
-            });
-        });
-    </script>
 </body>
 </html>
