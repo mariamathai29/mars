@@ -36,11 +36,11 @@
             padding: 20px;
             margin: 400px 0;
             text-align: center;
-            background-color: rgba(0, 0, 0, 0.1);
+            background-color: rgba(0, 0, 0, 0.4);
             position: relative;
             backdrop-filter: blur(10px);
             opacity: 0;
-            transition: opacity 1s ease-out;
+            transition: opacity 1s ease-in-out;
         }
 
         h1 {
@@ -48,8 +48,8 @@
             font-weight: normal;
             margin-bottom: 10px;
             position: absolute;
-            top: -65px;
-            left: 20%;
+            top: -80px;
+            left: 50%;
             transform: translateX(-50%);
             font-size: 100px;
             opacity: 0;
@@ -59,38 +59,12 @@
             text-shadow: 0 0 5px rgba(255, 255, 255, 1);
         }
 
-        .section.visible {
+        .visible {
             opacity: 1;
         }
 
-        h1.visible {
-            opacity: 1;
-        }
-
-        .button-container {
-            margin-top: 20px;
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-        }
-
-        .social-button {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-decoration: none;
-            color: white;
-            font-size: 18px;
-            font-family: "Sono", sans-serif;
-        }
-
-        .social-button img {
-            width: 175px;
-            height: 175px;
-        }
-
-        .social-button:hover span {
-            text-decoration: underline;
+        .fade-out {
+            opacity: 0;
         }
     </style>
 </head>
@@ -110,51 +84,34 @@
     <div class="section">
         <h1>projects</h1>
         <p>I'm currently learning Verilog (I'm working on building a CPU!) and fundamentals of PCB design.</p>
-        <p>Recent/notable projects on my GitHub:</p>
-        <ul>
-            <li>Sometimes I try out Project Euler problems, solutions can be found under project_euler.</li>
-            <li>You can find my first-year design project, ParkPal, under ECE198.</li>
-            <li>I've been working through solutions for Bioinformatics Algorithms: An Active Learning Approach, under bioinformatics.</li>
-        </ul>
-        <p>I'm also currently reading:</p>
-        <ul>
-            <li>Computer Organization and Design (Patterson, Hennessy)</li>
-            <li>Modern Digital and Analog Communication Systems (Lathi, Ding)</li>
-        </ul>
     </div>
     
     <div class="section">
         <h1>other pages</h1>
-        <div class="button-container">
-            <a href="https://github.com/mariamathai29" target="_blank" class="social-button">
-                <img src="assets/button1.png" alt="github">
-                <span>github</span>
-            </a>
-            <a href="https://www.linkedin.com/in/memathai/" target="_blank" class="social-button">
-                <img src="assets/button2.png" alt="linkedin">
-                <span>linkedin</span>
-            </a>
-        </div>
     </div>
 
     <script>
-        // Intersection Observer setup
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
+                    entry.target.classList.remove('fade-out');
+                } else {
+                    entry.target.classList.add('fade-out');
+                    entry.target.classList.remove('visible');
                 }
             });
-        }, { threshold: 0.5 }); // Triggers when 50% of the element is visible
+        }, { threshold: 0.5 });
 
-        // Observe each section
         document.querySelectorAll('.section').forEach(section => {
             observer.observe(section);
         });
 
-        // Observe each header
-        document.querySelectorAll('h1').forEach(header => {
-            observer.observe(header);
+        window.addEventListener('scroll', () => {
+            document.querySelectorAll('h1').forEach(header => {
+                let speed = -window.scrollY * 0.2;
+                header.style.transform = `translate(-50%, ${speed}px)`;
+            });
         });
     </script>
 </body>
