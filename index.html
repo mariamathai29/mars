@@ -54,6 +54,7 @@
             z-index: -1; /* Behind the box */
             color: transparent;
             text-shadow: 0 0 5px rgba(255, 255, 255, 1);
+            transition: transform 0.1s ease-in-out;
         }
 
         .button-container {
@@ -125,5 +126,17 @@
             </a>
         </div>
     </div>
+
+    <script>
+        // Parallax effect for headers
+        window.addEventListener('scroll', function() {
+            const headers = document.querySelectorAll('h1');
+            headers.forEach(header => {
+                let offset = window.pageYOffset;
+                // Apply parallax effect by changing header's transform property
+                header.style.transform = `translateX(-50%) translateY(${offset * 0.2}px)`;
+            });
+        });
+    </script>
 </body>
 </html>
