@@ -38,6 +38,21 @@
             align-items: center;
         }
 
+        /* Sidebar Styling */
+        .sidebar {
+            position: fixed;
+            top: 20%;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 10px;
+            width: 200px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            z-index: 10;
+        }
+
+        /* General Section Styling */
         .section {
             width: 40%;
             padding: 20px;
@@ -73,12 +88,13 @@
             opacity: 0;
         }
 
+        /* Button Container Styling */
         .button-container {
             margin-top: 30px;
             display: flex;
-            flex-direction: column; /* Stack buttons vertically */
-            align-items: flex-start; /* Align buttons to the left */
-            gap: 20px; /* Reduce space between buttons */
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 20px;
             position: absolute;
             left: 5%;
             top: 20%;
@@ -87,12 +103,12 @@
         .social-button {
             display: flex;
             flex-direction: column;
-            align-items: flex-start; /* Align text to the left */
+            align-items: flex-start;
             text-decoration: none;
             color: white;
             font-size: 18px;
             font-family: "Sono-Bold", sans-serif;
-            font-weight: bold; /* Make text bold */
+            font-weight: bold;
         }
 
         .social-button img {
@@ -102,7 +118,7 @@
 
         .social-button span {
             font-family: "Sono-Bold", sans-serif;
-            font-weight: bold; /* Bold labels */
+            font-weight: bold;
             margin-top: 5px;
         }
 
@@ -119,6 +135,18 @@
 </head>
 <body>
     <div class="name-title">MARIA MATHAI</div>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <a href="https://github.com/mariamathai29" target="_blank" class="social-button">
+            <img src="assets/button1.png" alt="github">
+            <span>github</span>
+        </a>
+        <a href="https://www.linkedin.com/in/memathai/" target="_blank" class="social-button">
+            <img src="assets/button2.png" alt="linkedin">
+            <span>linkedin</span>
+        </a>
+    </div>
 
     <div class="button-container">
         <a href="https://github.com/mariamathai29" target="_blank" class="social-button">
