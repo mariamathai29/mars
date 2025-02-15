@@ -13,10 +13,17 @@
             font-style: normal;
         }
 
+        @font-face {
+            font-family: "Sono";
+            src: url("assets/sono.ttf") format("truetype");
+            font-weight: normal;
+            font-style: normal;
+        }
+
         body {
             background-color: black;
             color: white;
-            font-family: "Times New Roman", serif;
+            font-family: "Sono", sans-serif; /* Change to Sono font */
             font-size: 16px;
             margin: 0;
             display: flex;
@@ -42,7 +49,7 @@
             top: -65px; /* Move it up */
             left: 25%;
             transform: translateX(-50%);
-            font-size: 55px; /* Bigger text */
+            font-size: 60px; /* Bigger text */
             opacity: 1; /* Faded so it's just barely visible */
             z-index: -1; /* Behind the box */
             color: transparent;
@@ -63,7 +70,7 @@
             text-decoration: none;
             color: white;
             font-size: 18px;
-            font-family: "CustomFont", sans-serif;
+            font-family: "Sono", sans-serif; /* Change to Sono font */
         }
 
         .social-button img {
