@@ -20,17 +20,10 @@
             font-style: normal;
         }
 
-        @font-face {
-            font-family: "Sono-Bold";
-            src: url("assets/Sono-Bold.ttf") format("truetype");
-            font-weight: bold;
-            font-style: normal;
-        }
-
         body {
             background-color: black;
             color: white;
-            font-family: "Sono", sans-serif; /* Change to Sono font */
+            font-family: "Sono", sans-serif;
             font-size: 16px;
             margin: 0;
             display: flex;
@@ -43,10 +36,11 @@
             padding: 20px;
             margin: 400px 0;
             text-align: center;
-            background-color: rgba(255, 255, 255, 0.2); /* Semi-translucent */
+            background-color: rgba(255, 255, 255, 0.2);
             position: relative;
-            backdrop-filter: blur(10px); /* Adds a slight blur to the background */
-            transition: transform 0.1s ease-in-out;
+            backdrop-filter: blur(10px);
+            opacity: 0;
+            transition: opacity 1s ease-out;
         }
 
         h1 {
@@ -54,15 +48,23 @@
             font-weight: normal;
             margin-bottom: 10px;
             position: absolute;
-            top: -65px; /* Move it up */
+            top: -65px;
             left: 25%;
             transform: translateX(-50%);
-            font-size: 60px; /* Bigger text */
-            opacity: 1; /* Faded so it's just barely visible */
-            z-index: -1; /* Behind the box */
+            font-size: 60px;
+            opacity: 0;
+            transition: opacity 1s ease-out;
+            z-index: -1;
             color: transparent;
             text-shadow: 0 0 5px rgba(255, 255, 255, 1);
-            transition: transform 0.1s ease-in-out;
+        }
+
+        .section.visible {
+            opacity: 1;
+        }
+
+        h1.visible {
+            opacity: 1;
         }
 
         .button-container {
@@ -79,7 +81,7 @@
             text-decoration: none;
             color: white;
             font-size: 18px;
-            font-family: "Sono", sans-serif; /* Change to Sono font */
+            font-family: "Sono", sans-serif;
         }
 
         .social-button img {
@@ -136,21 +138,23 @@
     </div>
 
     <script>
-        // Parallax effect for headers
-        window.addEventListener('scroll', function() {
-            const headers = document.querySelectorAll('h1');
-            const sections = document.querySelectorAll('.section');
-            let offset = window.pageYOffset;
-
-            // Apply parallax effect to headers (normal)
-            headers.forEach(header => {
-                header.style.transform = `translateX(-50%) translateY(${offset * 0.5}px)`;
+        // Intersection Observer setup
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
             });
+        }, { threshold: 0.5 }); // Triggers when 50% of the element is visible
 
-            // Apply slower movement to sections
-            sections.forEach(section => {
-                section.style.transform = `translateY(${offset * 0.4}px)`; // Move slower
-            });
+        // Observe each section
+        document.querySelectorAll('.section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Observe each header
+        document.querySelectorAll('h1').forEach(header => {
+            observer.observe(header);
         });
     </script>
 </body>
