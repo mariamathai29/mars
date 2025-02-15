@@ -20,6 +20,13 @@
             font-style: normal;
         }
 
+        @font-face {
+            font-family: "Sono-Bold";
+            src: url("assets/Sono-Bold.ttf") format("truetype");
+            font-weight: bold;
+            font-style: normal;
+        }
+
         body {
             background-color: black;
             color: white;
@@ -36,7 +43,7 @@
             padding: 20px;
             margin: 400px 0;
             text-align: center;
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.7);
             position: relative;
             backdrop-filter: blur(10px);
             transition: opacity 1s ease-in-out;
@@ -69,18 +76,23 @@
         .button-container {
             margin-top: 30px;
             display: flex;
-            justify-content: center;
-            gap: 50px;
+            flex-direction: column; /* Stack buttons vertically */
+            align-items: flex-start; /* Align buttons to the left */
+            gap: 20px; /* Reduce space between buttons */
+            position: absolute;
+            left: 5%;
+            top: 20%;
         }
 
         .social-button {
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: flex-start; /* Align text to the left */
             text-decoration: none;
             color: white;
             font-size: 18px;
-            font-family: "Sono", sans-serif;
+            font-family: "Sono-Bold", sans-serif;
+            font-weight: bold; /* Make text bold */
         }
 
         .social-button img {
@@ -88,12 +100,37 @@
             height: 175px;
         }
 
-        .social-button:hover span {
-            text-decoration: underline;
+        .social-button span {
+            font-family: "Sono-Bold", sans-serif;
+            font-weight: bold; /* Bold labels */
+            margin-top: 5px;
+        }
+
+        .name-title {
+            position: absolute;
+            left: 5%;
+            top: 10%;
+            font-size: 36px;
+            font-family: "Sono-Bold", sans-serif;
+            font-weight: bold;
+            color: white;
         }
     </style>
 </head>
 <body>
+    <div class="name-title">MARIA MATHAI</div>
+
+    <div class="button-container">
+        <a href="https://github.com/mariamathai29" target="_blank" class="social-button">
+            <img src="assets/button1.png" alt="github">
+            <span>github</span>
+        </a>
+        <a href="https://www.linkedin.com/in/memathai/" target="_blank" class="social-button">
+            <img src="assets/button2.png" alt="linkedin">
+            <span>linkedin</span>
+        </a>
+    </div>
+
     <div class="section">
         <p>interested in circuit design, firmware, and signals processing.</p>
     </div>
@@ -113,16 +150,6 @@
     
     <div class="section">
         <h1>other pages</h1>
-        <div class="button-container">
-            <a href="https://github.com/mariamathai29" target="_blank" class="social-button">
-                <img src="assets/button1.png" alt="github">
-                <span>github</span>
-            </a>
-            <a href="https://www.linkedin.com/in/memathai/" target="_blank" class="social-button">
-                <img src="assets/button2.png" alt="linkedin">
-                <span>linkedin</span>
-            </a>
-        </div>
     </div>
 
     <script>
