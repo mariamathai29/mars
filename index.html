@@ -26,17 +26,25 @@
 
         .section {
             width: 40%;
-            border: 1px gray; /* Reduced border thickness */
             padding: 20px;
-            margin: 400px 0; /* Increased margin for more scrolling space */
+            margin: 400px 0;
             text-align: center;
-            background-color: rgba(255, 255, 255, 0.1);
+            background-color: rgba(255, 255, 255, 0.1); /* Semi-translucent */
+            position: relative;
+            backdrop-filter: blur(10px); /* Adds a slight blur to the background */
         }
 
         h1 {
             font-family: "CustomFont", sans-serif;
             font-weight: normal;
             margin-bottom: 10px;
+            position: absolute;
+            top: -30px; /* Move it up */
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 48px; /* Bigger text */
+            opacity: 0.2; /* Faded so it's just barely visible */
+            z-index: -1; /* Behind the box */
         }
 
         .button-container {
