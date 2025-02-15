@@ -19,6 +19,7 @@
             src: url("assets/regular.ttf") format("truetype");
         }
 
+
         body {
             background-color: black;
             color: white;
@@ -97,6 +98,7 @@
             font-size: 150px;
             color: white;
             position: absolute;
+            top: -50px;
             left: 30%;
             transform: translateX(-50%);
             z-index: -1;
@@ -159,14 +161,6 @@
             
             sections.forEach(section => observer.observe(section));
             headers.forEach(header => observer.observe(header));
-        });
-
-        document.addEventListener("scroll", function () {
-            const headers = document.querySelectorAll("h1");
-            headers.forEach(header => {
-                let scrollOffset = window.scrollY * 0.08; // Adjust speed of parallax effect
-                header.style.transform = `translateX(-50%) translateY(${scrollOffset}px)`;
-            });
         });
     </script>
 </body>
