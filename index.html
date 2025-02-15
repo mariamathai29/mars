@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>maria's page</title>
     <link rel="icon" href="assets/lily.png" type="image/png">
-
     <style>
         @font-face {
             font-family: "CustomFont";
@@ -15,24 +14,35 @@
         }
 
         body {
-            background-color: white;
-            color: black;
+            background-color: black;
+            color: white;
             font-family: "Times New Roman", serif;
             font-size: 16px;
-            margin: 20px;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .section {
+            width: 60%;
+            border: 2px solid white;
+            padding: 20px;
+            margin: 100px 0;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.1);
         }
 
         h1 {
-            text-align: left;
             font-family: "CustomFont", sans-serif;
             font-weight: normal;
-            margin-bottom: 2px;
+            margin-bottom: 10px;
         }
 
         .button-container {
             margin-top: 20px;
             display: flex;
-            align-items: center;
+            justify-content: center;
             gap: 30px;
         }
 
@@ -41,7 +51,7 @@
             flex-direction: column;
             align-items: center;
             text-decoration: none;
-            color: black;
+            color: white;
             font-size: 18px;
             font-family: "CustomFont", sans-serif;
         }
@@ -54,46 +64,49 @@
         .social-button:hover span {
             text-decoration: underline;
         }
-        ul, p {
-            margin-top: 0;
-        }
     </style>
 </head>
 <body>
-
-<p>interested in circuit design, firmware, and signals processing.</p>
-
-<h1>about me</h1>
-<ul>
-    <li>Electrical Engineering, University of Waterloo (2024 - 2029)</li>
-    <li>DSP and Software Intern, Ethernovia (Jan 2025 - Apr 2025)</li>
-</ul>
-
-<h1>current projects</h1>
-<p>I'm currently learning Verilog (I'm working on building a CPU!) and fundamentals of PCB design. </p>
-<p>Recent/notable projects on my GitHub:</p>
-<ul>
-    <li> Sometimes I try out Project Euler problems, solutions can be found under project_euler.</li>
-    <li> You can find my first-year design project, ParkPal, under ECE198.</li>
-    <li> I've been working through solutions for Bioinformatics Algorithms: An Active Learning Approach, under bioinformatics.</li>
-</ul>
-<p>I'm also currently reading:</p>
-<ul>
-    <li>Computer Organization and Design (Patterson, Hennessy)</li>
-    <li>Modern Digital and Analog Communication Systems (Lathi, Ding)</li>
-</ul>
-
-<h1>other pages</h1>
-<div class="button-container">
-    <a href="https://github.com/mariamathai29" target="_blank" class="social-button">
-        <img src="assets/button1.png" alt="github">
-        <span>github</span>
-    </a>
-    <a href="https://www.linkedin.com/in/memathai/" target="_blank" class="social-button">
-        <img src="assets/button2.png" alt="linkedin">
-        <span>linkedin</span>
-    </a>
-</div>
-
+    <div class="section">
+        <p>interested in circuit design, firmware, and signals processing.</p>
+    </div>
+    
+    <div class="section">
+        <h1>about me</h1>
+        <ul>
+            <li>Electrical Engineering, University of Waterloo (2024 - 2029)</li>
+            <li>DSP and Software Intern, Ethernovia (Jan 2025 - Apr 2025)</li>
+        </ul>
+    </div>
+    
+    <div class="section">
+        <h1>current projects</h1>
+        <p>I'm currently learning Verilog (I'm working on building a CPU!) and fundamentals of PCB design.</p>
+        <p>Recent/notable projects on my GitHub:</p>
+        <ul>
+            <li>Sometimes I try out Project Euler problems, solutions can be found under project_euler.</li>
+            <li>You can find my first-year design project, ParkPal, under ECE198.</li>
+            <li>I've been working through solutions for Bioinformatics Algorithms: An Active Learning Approach, under bioinformatics.</li>
+        </ul>
+        <p>I'm also currently reading:</p>
+        <ul>
+            <li>Computer Organization and Design (Patterson, Hennessy)</li>
+            <li>Modern Digital and Analog Communication Systems (Lathi, Ding)</li>
+        </ul>
+    </div>
+    
+    <div class="section">
+        <h1>other pages</h1>
+        <div class="button-container">
+            <a href="https://github.com/mariamathai29" target="_blank" class="social-button">
+                <img src="assets/button1.png" alt="github">
+                <span>github</span>
+            </a>
+            <a href="https://www.linkedin.com/in/memathai/" target="_blank" class="social-button">
+                <img src="assets/button2.png" alt="linkedin">
+                <span>linkedin</span>
+            </a>
+        </div>
+    </div>
 </body>
 </html>
