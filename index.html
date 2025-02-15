@@ -144,12 +144,12 @@
 
             // Apply parallax effect to headers (normal)
             headers.forEach(header => {
-                header.style.transform = `translateX(-50%) translateY(${offset * 0.2}px)`;
+                header.style.transform = `translateX(-50%) translateY(${offset * 0.5}px)`;
             });
 
             // Apply slower movement to sections
             sections.forEach(section => {
-                section.style.transform = `translateY(${offset * 0.05}px)`; // Move slower
+                section.style.transform = `translateY(${offset * 0.2}px)`; // Move slower
             });
         });
     </script>
