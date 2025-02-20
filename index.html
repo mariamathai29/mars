@@ -32,8 +32,9 @@
         }
 
         .title-section {
-            margin-top: 150px;
-            margin-bottom: 250px;
+            margin-top: 50vh;
+            transform: translateY(-50%);
+            margin-bottom: 100px;
         }
 
         .name-title {
@@ -41,7 +42,7 @@
             font-family: "bold", sans-serif;
             font-weight: bold;
             color: white;
-            margin-bottom: 80px;
+            margin-bottom: 40px;
         }
 
         .content {
@@ -154,25 +155,5 @@
             <span>linkedin</span>
         </a>
     </div>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const sections = document.querySelectorAll(".section");
-            const headers = document.querySelectorAll("h1");
-            
-            const observer = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("visible");
-                    } else {
-                        entry.target.classList.remove("visible");
-                    }
-                });
-            }, { threshold: 0.2 });
-            
-            sections.forEach(section => observer.observe(section));
-            headers.forEach(header => observer.observe(header));
-        });
-    </script>
 </body>
 </html>
